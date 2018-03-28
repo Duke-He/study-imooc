@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="basicstruts3" extends="struts-default" namespace="/api">
+        <default-action-ref name="error"></default-action-ref>
+        <action name="error" class="com.imooc.action.DefaultAction">
+        	<result>/login.jsp</result>
+        	<result name="login">/login.jsp</result>
+        </action>
+        <action name="index_*" method="{1}" class="com.imooc.action.HelloWorldAction">
+            <result>/index.jsp</result>
+            <result name="add">/add.jsp</result>
+            <result name="update">/update.jsp</result>
+            <allowed-methods>add, update</allowed-methods>
+        </action>
+        <action name="loginAction" method="login" class="com.imooc.action.LoginAction">
+            <result>/sucess.jsp</result>
+        </action>
+        <!-- <action name="addAction" method="add" class="com.imooc.action.HelloWorldAction">
+            <result>/add.jsp</result>
+        </action> -->
+    </package>
+</struts>
